@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Laravel\Socialite\Facades\Socialite;
+use Socialite;
 
 class GitHubController extends Controller
 {
-    public function redirect()
+    public function redirectToProvider()
     {
         return Socialite::driver('github')->redirect();
     }
 
-    public function handle()
+    public function handleProviderCallback()
     {
         $user = Socialite::driver('github')->user();
 
-        dd($user);
+        $user->token;
+
+        return redirect('/home');
     }
 }

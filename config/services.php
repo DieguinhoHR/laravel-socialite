@@ -38,8 +38,6 @@ return [
     'github' => [
         'client_id' => '3bb036506c369ee35f3f',
         'client_secret' => 'ef28b73a823ca5271939adc583cd21ae23c028b2',
-        'redirect' => 'http://localhost:8000/auth/gtihub/callback',
-
+        'redirect' => 'http://localhost:8000/auth/github/callback'
     ]
-
 ];
