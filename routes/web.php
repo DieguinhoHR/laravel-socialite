@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['web']], function () {
+    Route::group(['prefix' => 'auth/github'], function() {
+       Route::get('/', 'GitHubController@redirect');
+       Route::get('callback', 'GitHubController@handle');
+    });
+});
